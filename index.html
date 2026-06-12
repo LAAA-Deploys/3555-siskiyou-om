@@ -194,21 +194,20 @@
   .legend .sw{display:inline-block;width:10px;height:10px;margin-right:5px;vertical-align:-1px;}
 
   /* ---- cap-rate positioning ruler ---- */
-  .ruler{position:relative;height:62px;margin:18px 0 38px;}
-  .ruler .track{position:absolute;left:0;right:0;top:26px;height:10px;border-radius:5px;
-    background:linear-gradient(90deg,#3a6e57 0%,#7a8a45 32%,var(--accent) 60%,var(--accent-deep) 100%);}
-  .ruler .band{position:absolute;top:20px;height:22px;border:1.5px dashed rgba(22,39,63,.5);border-radius:4px;}
-  .ruler .mk{position:absolute;top:-6px;transform:translateX(-50%);text-align:center;}
-  .ruler .mk .dot{width:13px;height:13px;border-radius:50%;background:var(--navy);border:2.5px solid #fff;margin:0 auto;
-    box-shadow:0 1px 4px rgba(0,0,0,.3);position:relative;top:30px;}
-  .ruler .mk.subj .dot{background:var(--accent);}
-  .ruler .mk.pf .dot{background:var(--good);}
-  .ruler .mk .v{font-family:'Fraunces';font-size:13px;font-weight:700;color:var(--navy);}
-  .ruler .mk.pf .v{color:var(--good);}
-  .ruler .mk .c{font-size:7px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
-  .ruler .mk.below{top:auto;bottom:-6px;}
-  .ruler .mk.below .dot{top:-30px;}
-  .ruler .scaleL{position:absolute;bottom:-12px;font-size:7.5px;color:var(--muted);font-family:'IBM Plex Mono';}
+  .ruler{position:relative;height:96px;margin:14px 4px 8px;}
+  .ruler .track{position:absolute;left:3%;right:3%;top:54px;height:10px;border-radius:5px;
+    background:linear-gradient(90deg,#3a6e57 0%,#7a8a45 30%,var(--accent) 62%,var(--accent-deep) 100%);}
+  .ruler .band{position:absolute;top:48px;height:22px;border:1.5px dashed rgba(22,39,63,.45);border-radius:4px;}
+  .ruler .lab{position:absolute;top:0;transform:translateX(-50%);text-align:center;width:150px;}
+  .ruler .lab .v{font-family:'Fraunces';font-size:15px;font-weight:700;color:var(--navy);line-height:1;}
+  .ruler .lab.subj .v{color:var(--accent-deep);}
+  .ruler .lab.pf .v{color:var(--good);}
+  .ruler .lab .c{font-size:7.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:4px;line-height:1.2;white-space:nowrap;}
+  .ruler .dot{position:absolute;top:51px;width:15px;height:15px;border-radius:50%;background:var(--navy);
+    border:3px solid #fff;transform:translateX(-50%);box-shadow:0 1px 4px rgba(0,0,0,.35);}
+  .ruler .dot.subj{background:var(--accent);}
+  .ruler .dot.pf{background:var(--good);}
+  .ruler .scaleL{position:absolute;top:72px;font-size:7.5px;color:var(--muted);font-family:'IBM Plex Mono';transform:translateX(-50%);}
 
   /* ---- demographic visual callouts ---- */
   .demos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
@@ -390,6 +389,10 @@
             <div class="s">NOI · 10.31% cap · 6.19 GRM</div>
           </div>
         </div>
+      </div>
+      <div class="feature" style="height:1.5in;">
+        <img src="./assets/2.png" alt="Aerial rooftops" />
+        <div class="pcap">Aerial · Six-Building Bungalow Configuration Across Two Parcels</div>
       </div>
     </div>
     <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap · LAAA Team</div><div>Siskiyou Street Apartments · Offering Memorandum</div><div class="pg">04</div></div>
@@ -613,7 +616,7 @@
           </tbody>
         </table>
         <div class="t-note">In-place scheduled rent $10,706/mo ($128,471/yr); stabilized market $14,800/mo ($177,600/yr). Market modeled at a conservative $2,100 (2BD/1BA) and $2,200 (2BD/1.5BA). Rents to be buyer-verified.</div>
-        <table style="margin-top:auto;">
+        <table style="margin-top:14px;">
           <thead><tr><th>Unit Type</th><th>Qty</th><th>SF</th><th>In-Place</th><th>Market</th></tr></thead>
           <tbody>
             <tr><td>2BD / 1BA</td><td>6</td><td>750</td><td>$1,426</td><td>$2,100</td></tr>
@@ -809,14 +812,17 @@
         <div style="font-size:8.5px;color:var(--muted);">LA Class-B stabilized vs. value-add East LA vs. the subject, going-in and stabilized</div>
         <div class="ruler">
           <div class="track"></div>
-          <div class="band" style="left:46%;right:30%;"></div>
-          <div class="mk" style="left:8%;"><div class="v">5.1%</div><div class="dot"></div><div class="c">Class-B stabilized</div></div>
-          <div class="mk subj" style="left:54%;"><div class="v">6.20%</div><div class="dot"></div><div class="c">Subject · going-in</div></div>
-          <div class="mk pf below" style="left:96%;"><div class="c">Subject · stabilized</div><div class="dot"></div><div class="v">10.31%</div></div>
-          <div class="scaleL" style="left:0;">4.75%</div>
-          <div class="scaleL" style="left:46%;">5.8%</div>
-          <div class="scaleL" style="left:64%;">6.5%</div>
-          <div class="scaleL" style="right:0;">11%</div>
+          <div class="band" style="left:19%;right:71%;"></div>
+          <div class="lab" style="left:8%;"><div class="v">5.1%</div><div class="c">Class-B stabilized</div></div>
+          <div class="lab subj" style="left:25%;"><div class="v">6.20%</div><div class="c">Subject · going-in</div></div>
+          <div class="lab pf" style="left:87%;"><div class="v">10.31%</div><div class="c">Subject · stabilized</div></div>
+          <div class="dot" style="left:8%;"></div>
+          <div class="dot subj" style="left:25%;"></div>
+          <div class="dot pf" style="left:87%;"></div>
+          <div class="scaleL" style="left:3%;">4.75%</div>
+          <div class="scaleL" style="left:19%;">5.8%</div>
+          <div class="scaleL" style="left:29%;">6.5%</div>
+          <div class="scaleL" style="left:97%;">11%</div>
         </div>
         <div style="font-size:8px;color:var(--muted);text-align:center;margin-top:2px;">Dashed band = current value-add Boyle Heights trading range (5.8%–6.5%).</div>
       </div>
@@ -880,7 +886,17 @@
           </tbody>
         </table>
         <div class="edit-flag" style="margin-top:7px;display:block;">↑ Awaiting 3–5 verified CoStar / MLS sale comps — drop into rows and pins update to match.</div>
-        <div class="callout" style="margin-top:auto;">
+        <div class="panel" style="margin-top:13px;padding:12px 15px;">
+          <h3 style="margin-bottom:8px;">Subject Snapshot</h3>
+          <div class="dl" style="font-size:9.5px;">
+            <dt>Offering Price</dt><dd>$1,100,000</dd>
+            <dt>Price / Unit</dt><dd>$157,143</dd>
+            <dt>Price / SF</dt><dd>$207.47</dd>
+            <dt>Going-In Cap</dt><dd>6.20%</dd>
+            <dt>Current NOI</dt><dd>$68,149</dd>
+          </div>
+        </div>
+        <div class="callout" style="margin-top:13px;">
           <div class="l">Market Backdrop</div>
           <p>Stabilized LA Class-B multifamily trades roughly 4.75%–5.50%; value-add East LA / Boyle Heights product prices wider, with current submarket listings in the 5.8%–6.5% range. The subject’s 6.20% going-in cap and $157K/unit basis price it competitively for a value-add buyer.</p>
         </div>
@@ -938,7 +954,7 @@
           <div class="bar-row"><div class="lab">Mkt Avg</div><div class="bar-track"><div class="bar-fill mkt" style="width:93%;">$2,337</div></div></div>
           <div class="bar-row"><div class="lab">Subject PF</div><div class="bar-track"><div class="bar-fill good" style="width:84%;">$2,100</div></div></div>
         </div>
-        <div class="callout" style="margin-top:auto;">
+        <div class="callout" style="margin-top:14px;">
           <div class="l">Conservative By Design</div>
           <p>The subject’s $2,100 pro-forma 2BR rent sits <b>below</b> the $2,337 Boyle Heights 2-bedroom market average — and below several active comps near $2,400–$2,500 — leaving additional embedded upside beyond the underwritten figure. Observed 2BR range: $1,625–$3,298.</p>
         </div>
@@ -955,71 +971,70 @@
       <div><div class="eyebrow">11 · Location</div><div class="sect">Boyle Heights Market Overview</div></div>
       <div class="tag">East Los Angeles</div>
     </div>
-    <div class="body" style="display:grid;grid-template-columns:1.4fr 1fr;gap:18px;">
-      <div style="display:flex;flex-direction:column;gap:11px;">
-        <div class="mapwrap" style="flex:1;min-height:3.2in;">
-          <svg viewBox="0 0 760 470" preserveAspectRatio="xMidYMid slice">
-            <rect width="760" height="470" fill="#eef1ee"/>
-            <!-- LA River -->
-            <path d="M150 0 C 170 120, 120 220, 150 340 C 165 410, 140 450, 150 470" fill="none" stroke="#9fc1d6" stroke-width="13"/>
-            <text x="96" y="250" font-family="Inter" font-size="13" fill="#5e86a0" transform="rotate(-90 96 250)">LA River</text>
-            <!-- DTLA cluster -->
-            <g fill="#b8c0cb">
-              <rect x="40" y="150" width="20" height="70"/><rect x="66" y="125" width="22" height="95"/>
-              <rect x="94" y="160" width="18" height="60"/><rect x="30" y="178" width="16" height="42"/>
-            </g>
-            <text x="70" y="245" font-family="Inter" font-size="14" font-weight="700" fill="#16273f" text-anchor="middle">Downtown LA</text>
-            <text x="70" y="262" font-family="Inter" font-size="11" fill="#5d6470" text-anchor="middle">±3 miles west</text>
-            <!-- Freeways -->
-            <g stroke="#dd863a" stroke-width="7" fill="none" opacity="0.92">
-              <path d="M150 70 C 320 60, 520 90, 740 70"/>
-              <path d="M150 430 C 330 450, 560 430, 740 440"/>
-              <path d="M540 0 C 560 160, 600 320, 700 470"/>
-            </g>
-            <g font-family="IBM Plex Mono" font-size="12" font-weight="700" fill="#fff">
-              <rect x="300" y="48" width="34" height="20" rx="3" fill="#16273f"/><text x="317" y="63" text-anchor="middle">I-10</text>
-              <rect x="300" y="424" width="34" height="20" rx="3" fill="#16273f"/><text x="317" y="439" text-anchor="middle">SR-60</text>
-              <rect x="566" y="150" width="40" height="20" rx="3" fill="#16273f"/><text x="586" y="165" text-anchor="middle">US-101</text>
-              <rect x="120" y="30" width="28" height="20" rx="3" fill="#16273f"/><text x="134" y="45" text-anchor="middle">I-5</text>
-            </g>
-            <!-- Metro E Line -->
-            <path d="M180 300 C 360 280, 520 300, 720 270" fill="none" stroke="#caa53a" stroke-width="6" stroke-dasharray="3 7"/>
-            <g>
-              <circle cx="330" cy="289" r="9" fill="#caa53a" stroke="#fff" stroke-width="2.5"/>
-              <text x="330" y="316" font-family="Inter" font-size="11" font-weight="600" fill="#7a6520" text-anchor="middle">Soto</text>
-              <circle cx="560" cy="290" r="9" fill="#caa53a" stroke="#fff" stroke-width="2.5"/>
-              <text x="560" y="317" font-family="Inter" font-size="11" font-weight="600" fill="#7a6520" text-anchor="middle">Indiana</text>
-            </g>
-            <text x="690" y="262" font-family="Inter" font-size="11" font-weight="700" fill="#7a6520" text-anchor="end">Metro E (Gold) Line</text>
-            <!-- Subject -->
-            <g>
-              <circle cx="470" cy="235" r="17" fill="#dd863a" stroke="#fff" stroke-width="3.5"/>
-              <text x="470" y="241" font-family="IBM Plex Mono" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">★</text>
-              <text x="470" y="208" font-family="Inter" font-size="13" font-weight="700" fill="#16273f" text-anchor="middle">Siskiyou St</text>
-            </g>
-          </svg>
-          <div class="pcap">Boyle Heights · Proximity to DTLA, Freeways &amp; Metro E Line</div>
-        </div>
-        <p style="font-size:9.6px;color:#414854;margin:0;line-height:1.5;">Boyle Heights sits immediately east of the Los Angeles River and Downtown, ringed by the 5, 10, 60 and 101 freeways with Metro E (Gold) Line service at Soto and Indiana. Its historic, low-rise housing stock and minimal new supply support consistent occupancy and steady rent growth.</p>
+    <div class="body" style="display:flex;flex-direction:column;gap:12px;">
+      <div class="mapwrap" style="height:3.5in;">
+        <svg viewBox="0 0 1080 380" preserveAspectRatio="xMidYMid slice">
+          <rect width="1080" height="380" fill="#eef1ee"/>
+          <!-- LA River -->
+          <path d="M190 0 C 215 110, 160 210, 195 320 C 210 370, 185 380, 190 380" fill="none" stroke="#9fc1d6" stroke-width="13"/>
+          <text x="155" y="205" font-family="Inter" font-size="13" fill="#5e86a0" transform="rotate(-90 155 205)">LA River</text>
+          <!-- Downtown LA -->
+          <g fill="#b8c0cb">
+            <rect x="45" y="155" width="22" height="75"/><rect x="72" y="130" width="24" height="100"/>
+            <rect x="101" y="165" width="20" height="65"/><rect x="33" y="185" width="16" height="45"/>
+          </g>
+          <text x="80" y="292" font-family="Inter" font-size="14" font-weight="700" fill="#16273f" text-anchor="middle">Downtown LA</text>
+          <text x="80" y="309" font-family="Inter" font-size="11" fill="#5d6470" text-anchor="middle">±3 miles west</text>
+          <!-- Freeways -->
+          <g stroke="#dd863a" stroke-width="7" fill="none" opacity="0.92">
+            <path d="M195 78 C 430 60, 780 88, 1060 72"/>
+            <path d="M195 330 C 460 350, 790 330, 1060 340"/>
+            <path d="M885 18 C 930 130, 985 250, 1035 372"/>
+            <path d="M195 130 C 255 100, 305 82, 370 70"/>
+          </g>
+          <g font-family="IBM Plex Mono" font-size="12" font-weight="700" fill="#fff">
+            <rect x="330" y="60" width="34" height="20" rx="3" fill="#16273f"/><text x="347" y="75" text-anchor="middle">I-10</text>
+            <rect x="340" y="322" width="40" height="20" rx="3" fill="#16273f"/><text x="360" y="337" text-anchor="middle">SR-60</text>
+            <rect x="910" y="150" width="44" height="20" rx="3" fill="#16273f"/><text x="932" y="165" text-anchor="middle">US-101</text>
+            <rect x="270" y="92" width="28" height="20" rx="3" fill="#16273f"/><text x="284" y="107" text-anchor="middle">I-5</text>
+          </g>
+          <!-- Metro E Line -->
+          <path d="M235 268 C 490 252, 770 272, 1035 256" fill="none" stroke="#caa53a" stroke-width="6" stroke-dasharray="3 7"/>
+          <g>
+            <circle cx="570" cy="262" r="9" fill="#caa53a" stroke="#fff" stroke-width="2.5"/>
+            <text x="570" y="289" font-family="Inter" font-size="11" font-weight="600" fill="#7a6520" text-anchor="middle">Soto</text>
+            <circle cx="825" cy="264" r="9" fill="#caa53a" stroke="#fff" stroke-width="2.5"/>
+            <text x="825" y="291" font-family="Inter" font-size="11" font-weight="600" fill="#7a6520" text-anchor="middle">Indiana</text>
+          </g>
+          <text x="1035" y="240" font-family="Inter" font-size="11" font-weight="700" fill="#7a6520" text-anchor="end">Metro E (Gold) Line</text>
+          <!-- Subject -->
+          <g>
+            <circle cx="605" cy="185" r="18" fill="#dd863a" stroke="#fff" stroke-width="3.5"/>
+            <text x="605" y="192" font-family="IBM Plex Mono" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">★</text>
+            <text x="605" y="156" font-family="Inter" font-size="14" font-weight="700" fill="#16273f" text-anchor="middle">Siskiyou St</text>
+          </g>
+        </svg>
+        <div class="pcap">Boyle Heights · Proximity to Downtown LA, Freeways &amp; Metro E Line</div>
       </div>
-      <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:11px;">
         <div class="callout light" style="border-left-color:var(--accent);">
-          <div class="l">◷ Minutes to Downtown</div>
-          <p>±3 miles to the Downtown LA job core — a short hop west across the river for hundreds of thousands of jobs.</p>
+          <div class="l">Minutes to Downtown</div>
+          <p>±3 miles to the DTLA job core — a short hop west across the river.</p>
         </div>
         <div class="callout light" style="border-left-color:var(--accent);">
-          <div class="l">⛟ Freeway Connectivity</div>
-          <p>Direct access to the I-5, I-10, SR-60 and US-101 — among the most connected positions in the LA basin.</p>
+          <div class="l">Freeway Access</div>
+          <p>Direct to the I-5, I-10, SR-60 &amp; US-101 — among the basin’s most connected spots.</p>
         </div>
         <div class="callout light" style="border-left-color:var(--accent);">
-          <div class="l">◉ Rail Transit</div>
-          <p>Metro E (Gold) Line stations at Soto &amp; Indiana link tenants car-free to DTLA, USC Medical and beyond.</p>
+          <div class="l">Rail Transit</div>
+          <p>Metro E (Gold) Line at Soto &amp; Indiana links tenants car-free to DTLA &amp; USC Medical.</p>
         </div>
         <div class="callout light" style="border-left-color:var(--accent);">
-          <div class="l">▤ Supply-Constrained</div>
-          <p>Low-rise historic fabric and minimal new construction keep vacancy tight and underpin durable rent growth.</p>
+          <div class="l">Supply-Constrained</div>
+          <p>Low-rise historic fabric and minimal new supply keep vacancy tight.</p>
         </div>
       </div>
+      <p style="font-size:9.6px;color:#414854;margin:2px 0 0;line-height:1.5;">Boyle Heights sits immediately east of the Los Angeles River and Downtown, ringed by the 5, 10, 60 and 101 freeways with Metro E (Gold) Line service at Soto and Indiana. Its historic, low-rise housing stock and minimal new supply support consistent occupancy and steady rent growth for well-located vintage assets.</p>
     </div>
     <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap · LAAA Team</div><div>Siskiyou Street Apartments · Offering Memorandum</div><div class="pg">16</div></div>
   </div>
