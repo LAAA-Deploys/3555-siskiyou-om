@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Offering Memorandum — 3551–3559 Siskiyou St, Los Angeles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#16273f;
+    --navy-deep:#0e1c30;
+    --navy-soft:#22405f;
+    --cream:#f7f2e8;
+    --cream-2:#efe7d6;
+    --accent:#dd863a;        /* M&M orange */
+    --accent-deep:#c06f29;
+    --ink:#1d2530;
+    --muted:#5d6470;
+    --rule:#d8cdb8;
+    --line:#e7ddc9;
+    --good:#2e7d5b;
+    --bad:#b4502f;
+    --pageW:11in;
+    --pageH:8.5in;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#52565c;}
+  body{font-family:'Inter',sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .serif{font-family:'Fraunces',serif;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+
+  /* ---------- print controls ---------- */
+  .toolbar{position:fixed;top:14px;right:14px;z-index:99;display:flex;gap:8px;}
+  .toolbar button{font-family:'Inter';font-size:12px;font-weight:600;letter-spacing:.04em;border:none;border-radius:6px;
+    background:var(--accent);color:#fff;padding:9px 14px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.3);}
+  .toolbar button.alt{background:var(--navy);}
+  @media print{.toolbar{display:none;}}
+
+  /* ---------- page frame ---------- */
+  .deck{display:flex;flex-direction:column;align-items:center;gap:26px;padding:34px 14px 60px;}
+  .page{
+    width:var(--pageW);height:var(--pageH);background:var(--cream);position:relative;overflow:hidden;
+    box-shadow:0 10px 38px rgba(0,0,0,.4);
+  }
+  .page-pad{position:absolute;inset:0;padding:0.5in 0.6in;display:flex;flex-direction:column;}
+
+  /* running header / footer */
+  .rh{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1.5px solid var(--rule);padding-bottom:8px;margin-bottom:16px;}
+  .rh .eyebrow{font-size:8.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;}
+  .rh .sect{font-family:'Fraunces';font-size:19px;color:var(--navy);font-weight:600;margin-top:2px;}
+  .rh .tag{font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);text-align:right;}
+  .rf{position:absolute;left:0.6in;right:0.6in;bottom:0.34in;display:flex;justify-content:space-between;align-items:center;
+    border-top:1px solid var(--rule);padding-top:7px;font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
+  .rf .pg{font-family:'IBM Plex Mono';color:var(--navy);font-weight:600;}
+  .logo{display:flex;align-items:center;gap:7px;font-family:'Fraunces';font-weight:600;color:var(--navy);font-size:13px;letter-spacing:.02em;}
+  .logo .dia{width:10px;height:10px;background:var(--accent);transform:rotate(45deg);display:inline-block;}
+
+  h1,h2,h3{margin:0;}
+  .body{flex:1;}
+  p{line-height:1.5;}
+
+  /* ---------- COVER ---------- */
+  .cover{background:var(--navy-deep);color:#fff;}
+  .cover .hero{position:absolute;inset:0;}
+  .cover .hero img{width:100%;height:100%;object-fit:cover;filter:saturate(.96) brightness(.82);}
+  .cover .grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,28,48,.62) 0%,rgba(14,28,48,.28) 38%,rgba(14,28,48,.82) 100%);}
+  .cover .frame{position:absolute;inset:0.32in;border:1px solid rgba(255,255,255,.28);pointer-events:none;}
+  .cover-top{position:absolute;top:0.55in;left:0.7in;right:0.7in;display:flex;justify-content:space-between;align-items:center;}
+  .cover-top .brand{display:flex;align-items:center;gap:9px;font-family:'Fraunces';font-size:16px;font-weight:600;letter-spacing:.02em;}
+  .cover-top .brand .dia{width:12px;height:12px;background:var(--accent);transform:rotate(45deg);}
+  .cover-top .eyebrow{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.85);}
+  .team-logo{height:42px;width:auto;display:block;filter:drop-shadow(0 1px 4px rgba(0,0,0,.35));}
+  .cover-band{position:absolute;left:0;right:0;bottom:0.78in;padding:0 0.7in;}
+  .cover-band .kicker{font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:10px;}
+  .cover-band h1{font-family:'Fraunces';font-size:50px;line-height:.98;font-weight:600;letter-spacing:-.01em;}
+  .cover-band .addr{margin-top:12px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.86);}
+  .cover-stats{display:flex;gap:30px;margin-top:22px;}
+  .cover-stats .s .v{font-family:'Fraunces';font-size:27px;font-weight:600;color:#fff;}
+  .cover-stats .s .l{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-top:3px;}
+  .cover-stats .s .v .accent{color:var(--accent);}
+  .cover-foot{position:absolute;bottom:0.4in;left:0.7in;right:0.7in;display:flex;justify-content:space-between;
+    font-size:8.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.62);}
+  .cover-divider{height:2px;width:64px;background:var(--accent);margin:0 0 0 2px;}
+
+  /* ---------- generic blocks ---------- */
+  .eyebrow{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;}
+  .lead{font-family:'Fraunces';font-size:15px;line-height:1.5;color:var(--navy);font-weight:500;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+
+  /* metric tiles */
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .tile{background:#fff;border:1px solid var(--line);border-top:3px solid var(--accent);padding:13px 15px;}
+  .tile .l{font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+  .tile .v{font-family:'Fraunces';font-size:25px;font-weight:600;color:var(--navy);margin-top:5px;line-height:1;}
+  .tile .sub{font-size:9px;color:var(--muted);margin-top:4px;}
+
+  /* tables */
+  table{width:100%;border-collapse:collapse;font-size:10px;}
+  thead th{background:var(--navy);color:#fff;font-weight:600;text-align:right;padding:7px 9px;font-size:9px;letter-spacing:.04em;text-transform:uppercase;}
+  thead th:first-child{text-align:left;}
+  tbody td{padding:6px 9px;text-align:right;border-bottom:1px solid var(--line);}
+  tbody td:first-child{text-align:left;font-weight:500;color:var(--ink);}
+  tbody tr:nth-child(even){background:rgba(255,255,255,.55);}
+  tbody tr.sum td{background:var(--cream-2);font-weight:700;color:var(--navy);border-top:1.5px solid var(--rule);}
+  tbody tr.hl td{background:rgba(221,134,58,.12);}
+  .mono-td td{font-family:'IBM Plex Mono';}
+  .t-note{font-size:8px;color:var(--muted);margin-top:7px;font-style:italic;}
+
+  /* highlight list */
+  .hl-list{display:grid;grid-template-columns:1fr 1fr;gap:11px 26px;margin-top:4px;}
+  .hl-item{display:flex;gap:11px;align-items:flex-start;}
+  .hl-item .n{font-family:'Fraunces';font-size:15px;color:var(--accent);font-weight:600;line-height:1.1;min-width:20px;}
+  .hl-item .tx b{display:block;font-size:11px;color:var(--navy);font-weight:600;margin-bottom:1px;}
+  .hl-item .tx span{font-size:9.5px;color:var(--muted);line-height:1.4;}
+
+  /* photo grids */
+  .gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr;gap:8px;flex:1;}
+  .gal .big{grid-column:span 2;grid-row:span 2;}
+  .gal figure{margin:0;overflow:hidden;background:var(--navy-deep);position:relative;}
+  .gal img{width:100%;height:100%;object-fit:cover;display:block;}
+
+  .panel{background:#fff;border:1px solid var(--line);padding:14px 16px;}
+  .panel h3{font-family:'Fraunces';font-size:14px;color:var(--navy);font-weight:600;margin-bottom:9px;}
+  .dl{display:grid;grid-template-columns:auto 1fr;gap:5px 14px;font-size:10px;}
+  .dl dt{color:var(--muted);}
+  .dl dd{margin:0;text-align:right;font-weight:600;color:var(--ink);}
+
+  .splitimg{background:var(--navy-deep);overflow:hidden;}
+  .splitimg img{width:100%;height:100%;object-fit:cover;}
+
+  .toc-row{display:flex;align-items:baseline;gap:14px;padding:11px 0;border-bottom:1px solid var(--line);}
+  .toc-row .num{font-family:'IBM Plex Mono';font-size:13px;color:var(--accent);font-weight:600;width:34px;}
+  .toc-row .ti{font-family:'Fraunces';font-size:16px;color:var(--navy);font-weight:600;flex:1;}
+  .toc-row .dots{flex:1;border-bottom:1px dotted var(--rule);margin:0 8px 4px;}
+  .toc-row .pg{font-family:'IBM Plex Mono';font-size:11px;color:var(--muted);}
+
+  .callout{background:var(--navy);color:#fff;padding:13px 16px;border-left:4px solid var(--accent);}
+  .callout .l{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:700;}
+  .callout p{font-size:10px;line-height:1.45;margin:6px 0 0;color:rgba(255,255,255,.9);}
+
+  .disc p{font-size:9.6px;line-height:1.56;color:#414854;margin:0 0 9px;}
+  .disc h3{font-family:'Fraunces';font-size:12.5px;color:var(--navy);margin:11px 0 6px;}
+
+  .tag-pill{display:inline-block;font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+    padding:2px 6px;border-radius:3px;background:rgba(221,134,58,.16);color:var(--accent-deep);}
+  .tag-pill.adu{background:rgba(46,125,91,.14);color:var(--good);}
+  .tag-pill.val{background:rgba(180,80,47,.14);color:var(--bad);}
+
+  .note-edit{outline:1px dashed var(--accent);outline-offset:2px;}
+  .edit-flag{font-size:7.5px;color:var(--accent-deep);font-style:italic;}
+
+  /* ---------- front cover: solid navy, no photo, prominent type ---------- */
+  .cover.front{background:var(--navy-deep);}
+  .cover.front .cover-band{bottom:auto;top:50%;transform:translateY(-50%);}
+  .cover.front .cover-band .kicker{font-size:11px;}
+  .cover.front .cover-band h1{font-size:66px;line-height:.95;}
+  .cover.front .cover-band .addr{font-size:18px;margin-top:18px;letter-spacing:.16em;color:rgba(255,255,255,.92);}
+
+  /* ---------- bright "Exclusively Listed By" box ---------- */
+  .listed-by{background:#fff;border:1px solid var(--line);border-top:3px solid var(--accent);padding:14px 17px;}
+  .listed-by .l{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep);font-weight:700;}
+  .listed-by p{font-size:10.5px;line-height:1.5;margin:9px 0 0;color:var(--ink);}
+  .listed-by p b{color:var(--navy);font-size:11.5px;}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <button onclick="window.print()">⤓ Print / Save PDF</button>
+  <button class="alt" onclick="document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()">⛶ Fullscreen</button>
+</div>
+<div class="deck">
+
+<!-- ============ 1 · COVER ============ -->
+<section class="page cover front">
+  <div class="frame"></div>
+  <div class="cover-top">
+    <img class="team-logo" src="./assets/laaa-team-white.png" alt="Marcus & Millichap — LAAA Team" />
+    <div class="eyebrow">Multifamily Investment Advisors</div>
+  </div>
+  <div class="cover-band">
+    <div class="kicker">Multifamily Offering Memorandum</div>
+    <div class="cover-divider"></div>
+    <h1>Siskiyou Street<br/>Apartments</h1>
+    <div class="addr">3551 – 3559 Siskiyou Street · Boyle Heights · Los Angeles, CA 90023</div>
+  </div>
+  <div class="cover-foot">
+    <span>Confidential — For Qualified Investors Only</span>
+    <span>www.laaa.com</span>
+  </div>
+</section>
+
+<!-- ============ 2 · CONFIDENTIALITY ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh">
+      <div><div class="eyebrow">Confidentiality &amp; Disclaimer</div><div class="sect">Non-Endorsement &amp; Disclaimer Notice</div></div>
+      <div class="tag">3551–3559 Siskiyou St</div>
+    </div>
+    <div class="body grid2 disc">
+      <div>
+        <p>This Offering Memorandum has been prepared by Marcus &amp; Millichap (“Broker”) for use by a limited number of qualified parties evaluating a potential acquisition of the property located at 3551–3559 Siskiyou Street, Los Angeles, CA 90023 (the “Property”). It contains selected information about the Property and does not purport to be all-inclusive or to contain all of the information a prospective purchaser may require.</p>
+        <p>The information contained herein has been obtained from sources believed to be reliable; however, Broker has not verified, and will not verify, any of the information contained herein, nor has Broker conducted any investigation regarding these matters. Broker makes no guarantee, warranty or representation, express or implied, as to the accuracy or completeness of the information provided.</p>
+        <p>All financial projections, pro forma rents, and operating assumptions are provided for general reference, are based on assumptions relating to the general economy, market conditions, competition and other factors beyond Broker’s control, and are subject to material variation. The Property is a Real Estate Owned (REO) asset and is offered on an “as-is, where-is” basis.</p>
+        <h3>Non-Endorsement Notice</h3>
+        <p>Marcus &amp; Millichap is not affiliated with, sponsored by, or endorsed by any commercial tenant or lessee identified herein. The presence of any name or trade name is solely for identification purposes and is not intended to indicate any affiliation with, or sponsorship or endorsement by, Marcus &amp; Millichap.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;">
+        <p>Prospective purchasers should make their own independent investigation and rely solely upon such investigation, including verification of all rental income, lease terms, square footage, lot size, permitted and un-permitted spaces, unit/bedroom/bathroom counts, regulatory status, and operating expenses. The Property is subject to the City of Los Angeles Rent Stabilization Ordinance (RSO); buyers should independently confirm all applicable rent-control, registration and relocation obligations.</p>
+        <p>Recorded matters affecting title — including a recorded notice of intent to withdraw units from rental housing use (Ellis Act) executed by a prior owner, and a prior-owner litigation notice — are disclosed in the preliminary title report and should be reviewed by buyer and buyer’s counsel as part of due diligence.</p>
+        <p>By acceptance of this Offering Memorandum, you agree that the information contained herein is confidential, that you will hold and treat it in the strictest confidence, that you will not photocopy or duplicate it, and that you will not disclose it to any other party without the prior written authorization of Broker. The Owner reserves the right, at its sole discretion, to reject any and all expressions of interest or offers and to terminate discussions at any time.</p>
+        <div class="listed-by" style="margin-top:auto;">
+          <div class="l">Exclusively Listed By</div>
+          <p><b>Filip Niculete</b> · Senior Managing Director, Investments<br/>
+          CA DRE #01905352 · (818) 212-2748 · filip.niculete@marcusmillichap.com</p>
+          <p><b>Glen Scher</b> · Senior Managing Director, Investments<br/>
+          CA DRE #01962976 · (818) 212-2808 · glen.scher@marcusmillichap.com</p>
+        </div>
+      </div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap · LAAA Team</div><div>Siskiyou Street Apartments · Offering Memorandum</div><div class="pg">02</div></div>
+  </div>
+</section>
+
+<!-- ============ 3 · TABLE OF CONTENTS ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh">
+      <div><div class="eyebrow">Contents</div><div class="sect">Table of Contents</div></div>
+      <div class="tag">Offering Memorandum</div>
+    </div>
+    <div class="body grid2" style="gap:38px;">
+      <div>
+        <div class="toc-row"><span class="num">01</span><span class="ti">The Offering</span><span class="dots"></span><span class="pg">04</span></div>
+        <div class="toc-row"><span class="num">02</span><span class="ti">Investment Highlights</span><span class="dots"></span><span class="pg">05</span></div>
+        <div class="toc-row"><span class="num">03</span><span class="ti">Property Photographs</span><span class="dots"></span><span class="pg">06</span></div>
+        <div class="toc-row"><span class="num">04</span><span class="ti">Property Details</span><span class="dots"></span><span class="pg">07</span></div>
+        <div class="toc-row"><span class="num">05</span><span class="ti">Rent Roll &amp; Unit Mix</span><span class="dots"></span><span class="pg">08</span></div>
+        <div class="toc-row"><span class="num">06</span><span class="ti">Income &amp; Expense Analysis</span><span class="dots"></span><span class="pg">09</span></div>
+      </div>
+      <div>
+        <div class="toc-row"><span class="num">07</span><span class="ti">Operating Data &amp; Returns</span><span class="dots"></span><span class="pg">10</span></div>
+        <div class="toc-row"><span class="num">08</span><span class="ti">Pricing &amp; Positioning</span><span class="dots"></span><span class="pg">11</span></div>
+        <div class="toc-row"><span class="num">09</span><span class="ti">Sales Comparables</span><span class="dots"></span><span class="pg">12</span></div>
+        <div class="toc-row"><span class="num">10</span><span class="ti">Rent Comparables</span><span class="dots"></span><span class="pg">13</span></div>
+        <div class="toc-row"><span class="num">11</span><span class="ti">Boyle Heights Market Overview</span><span class="dots"></span><span class="pg">14</span></div>
+        <div class="toc-row"><span class="num">12</span><span class="ti">Demographics</span><span class="dots"></span><span class="pg">15</span></div>
+      </div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap · LAAA Team</div><div>Siskiyou Street Apartments · Offering Memorandum</div><div class="pg">03</div></div>
+  </div>
+</section>
+
+<!-- ============ 4 · THE OFFERING ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh">
+      <div><div class="eyebrow">01 · Executive Summary</div><div class="sect">The Offering</div></div>
+      <div class="tag">7 Units · Boyle Heights</div>
+    </div>
+    <div class="body" style="display:grid;grid-template-columns:1.15fr 1fr;gap:24px;">
+      <div>
+        <p class="lead">Marcus &amp; Millichap is pleased to present 3551–3559 Siskiyou Street, a seven-unit Tudor-style apartment community in the heart of Boyle Heights, offered free-and-clear at $1,100,000.</p>
+        <p style="font-size:10px;color:#414854;margin-top:12px;">The Property comprises six separate bungalow-style structures totaling ±5,302 rentable square feet on a generous ±11,225-square-foot lot. The unit mix is all two-bedroom — six 2BD/1BA homes and one 2BD/1.5BA — including <b>two brand-new (2023) accessory dwelling units</b> that add modern, fully-permitted income to a vintage 1929 asset.</p>
+        <p style="font-size:10px;color:#414854;margin-top:9px;">At the offered price the Property reflects a <b>6.20% current cap rate</b> on in-place income and an <b>8.56 GRM</b>, with a clear, near-term path to a <b>10.31% stabilized cap rate</b> as three legacy units — currently renting at $560–$641 versus a $2,100 market — are brought to market on natural turnover. The going-in basis of $157,143 per unit and $207 per square foot sits well below replacement cost and recent Boyle Heights trades.</p>
+        <div class="callout" style="margin-top:12px;">
+          <div class="l">The Value-Add Thesis</div>
+          <p>The three legacy units rent ~70% below market. Bringing the rent roll to market grows scheduled rent +38% and lifts NOI from $68,149 to $113,421 (+66%) — and the underwritten $2,100 rent is itself below the $2,360–$2,430 Boyle Heights 2BR average, leaving further upside.</p>
+        </div>
+      </div>
+      <div>
+        <div class="tiles">
+          <div class="tile"><div class="l">Offering Price</div><div class="v">$1.10M</div><div class="sub">$157,143 / unit</div></div>
+          <div class="tile"><div class="l">Price / SF</div><div class="v">$207</div><div class="sub">±5,302 SF</div></div>
+          <div class="tile"><div class="l">Units</div><div class="v">7</div><div class="sub">6 buildings</div></div>
+          <div class="tile"><div class="l">Current Cap</div><div class="v">6.20%</div><div class="sub">GRM 8.56</div></div>
+          <div class="tile"><div class="l">Pro Forma Cap</div><div class="v">10.31%</div><div class="sub">GRM 6.19</div></div>
+          <div class="tile"><div class="l">Year Built</div><div class="v">1929</div><div class="sub">+ 2 ADUs (2023)</div></div>
+          <div class="tile"><div class="l">Current NOI</div><div class="v" style="font-size:21px;">$68,149</div><div class="sub">in-place</div></div>
+          <div class="tile"><div class="l">Pro Forma NOI</div><div class="v" style="font-size:21px;">$113,421</div><div class="sub">stabilized</div></div>
+          <div class="tile"><div class="l">Lot Size</div><div class="v" style="font-size:21px;">±11,225</div><div class="sub">SF · LARD1.5</div></div>
+        </div>
+        <div class="panel" style="margin-top:12px;padding:11px 14px;">
+          <div class="dl">
+            <dt>Address</dt><dd>3551–3559 Siskiyou St</dd>
+            <dt>APNs (2 parcels)</dt><dd>5188-016-024 &amp; -025</dd>
+            <dt>Submarket</dt><dd>Boyle Heights / East LA</dd>
+            <dt>Rent Control</dt><dd>City of LA RSO</dd>
+            <dt>Sale Type</dt><dd>REO — Owned Free &amp; Clear</dd>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap · LAAA Team</div><div>Siskiyou Street Apartments · Offering Memorandum</div><div class="pg">04</div></div>
+  </div>
+</section>
+
+<!-- ============ 5 · INVESTMENT HIGHLIGHTS ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh">
+      <div><div class="eyebrow">02 · Why Siskiyou</div><div class="sect">Investment Highlights</div></div>
+      <div class="tag">Value-Add · Boyle Heights</div>
+    </div>
+    <div class="body" style="display:grid;grid-template-columns:1.5fr 1fr;gap:20px;">
+      <div class="hl-list" style="align-content:start;">
+        <div class="hl-item"><div class="n">01</div><div class="tx"><b>Substantial Rental Upside</b><span>Three legacy units rent at just $560–$641 — roughly 70% below market. Bringing the rent roll to market grows scheduled rent +38% and NOI +66% ($68K → $113K).</span></div></div>
+        <div class="hl-item"><div class="n">02</div><div class="tx"><b>Conservative Pro Forma — More To Come</b><span>Even the underwritten $2,100 market rent sits below the Boyle Heights 2BR average of $2,360–$2,430 (with comps to $3,250) — meaningful upside beyond the stated pro forma.</span></div></div>
+        <div class="hl-item"><div class="n">03</div><div class="tx"><b>Two New 2023 ADUs</b><span>Fully-permitted accessory units add modern, durable income and reduce deferred-maintenance exposure.</span></div></div>
+        <div class="hl-item"><div class="n">04</div><div class="tx"><b>Attractive Going-In Yield</b><span>6.20% current cap and 8.56 GRM on in-place income — with a clear path to a 10.31% stabilized cap.</span></div></div>
+        <div class="hl-item"><div class="n">05</div><div class="tx"><b>Below Replacement &amp; Comps</b><span>$157K/unit and $207/SF sit beneath recent submarket trades and the cost to build new.</span></div></div>
+        <div class="hl-item"><div class="n">06</div><div class="tx"><b>Liquid All-2BR Mix</b><span>The deepest, most resilient renter pool in East LA; simple to operate and re-tenant.</span></div></div>
+        <div class="hl-item"><div class="n">07</div><div class="tx"><b>Two-Parcel Assemblage</b><span>Sold as two contiguous parcels — APN 5188-016-024 (3555 Siskiyou) &amp; APN 5188-016-025 (3557 Siskiyou) — ±11,225 SF gated lot, 8 parking spaces and rear storage.</span></div></div>
+        <div class="hl-item"><div class="n">08</div><div class="tx"><b>Free &amp; Clear REO</b><span>Lender-owned and unencumbered — clean, motivated disposition with flexible financing options.</span></div></div>
+      </div>
+      <div class="splitimg"><img src="./assets/6.png" alt="Property" /></div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap · LAAA Team</div><div>Siskiyou Street Apartments · Offering Memorandum</div><div class="pg">05</div></div>
+  </div>
+</section>
+
+<!-- ============ 6 · PHOTOGRAPHS ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh">
+      <div><div class="eyebrow">03 · The Asset</div><div class="sect">Property Photographs</div></div>
+      <div class="tag">Six Tudor-Style Buildings</div>
+    </div>
+    <div class="body gal">
+      <figure class="big"><img src="./assets/2.png" alt=""></figure>
+      <figure><img src="./assets/3.png" alt=""></figure>
+      <figure><img src="./assets/4.png" alt=""></figure>
+      <figure><img src="./assets/5.png" alt=""></figure>
+      <figure><img src="./assets/7.png" alt=""></figure>
+      <figure><img src="./assets/8.png" alt=""></figure>
+      <figure><img src="./assets/9.png" alt=""></figure>
+      <figure><img src="./assets/10.png" alt=""></figure>
+      <figure><img src="./assets/11.png" alt=""></figure>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap · LAAA Team</div><div>Siskiyou Street Apartments · Offering Memorandum</div><div class="pg">06</div></div>
+  </div>
+</section>
+
+<!-- ============ 7 · PROPERTY DETAILS ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh">
+      <div><div class="eyebrow">04 · Description</div><div class="sect">Property Details</div></div>
+      <div class="tag">2 Parcels · APN -024 &amp; -025</div>
+    </div>
+    <div class="body" style="display:grid;grid-template-columns:1fr 1fr 0.9fr;gap:16px;">
+      <div class="panel">
+        <h3>Site &amp; Structure</h3>
+        <div class="dl">
+          <dt>Number of Units</dt><dd>7</dd>
+          <dt>Buildings</dt><dd>6</dd>
+          <dt>Parcels</dt><dd>2 contiguous</dd>
+          <dt>APN — 3555</dt><dd>5188-016-024</dd>
+          <dt>APN — 3557</dt><dd>5188-016-025</dd>
+          <dt>Rentable Area</dt><dd>±5,302 SF</dd>
+          <dt>Lot Size</dt><dd>±11,225 SF (±0.26 AC)</dd>
+          <dt>Year Built</dt><dd>1929 (+2 ADUs ’23)</dd>
+          <dt>Stories</dt><dd>1–2</dd>
+          <dt>Architecture</dt><dd>Tudor / Bungalow</dd>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Systems &amp; Zoning</h3>
+        <div class="dl">
+          <dt>Construction</dt><dd>Wood frame / stucco</dd>
+          <dt>Roof</dt><dd>Composition shingle</dd>
+          <dt>Heating</dt><dd>Floor furnace</dd>
+          <dt>Cooling</dt><dd>Wall units</dd>
+          <dt>Parking</dt><dd>8 spaces, gated</dd>
+          <dt>Storage</dt><dd>Rear storage unit</dd>
+          <dt>Security</dt><dd>Gated driveway</dd>
+          <dt>Zoning</dt><dd>LARD1.5</dd>
+          <dt>Rent Control</dt><dd>City of LA RSO</dd>
+          <dt>Title / Ownership</dt><dd>Fee · Free &amp; Clear</dd>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="splitimg" style="flex:1;"><img src="./assets/12.png" alt=""></div>
+        <div class="callout">
+          <div class="l">Due-Diligence Notes</div>
+          <p>SF and lot size per assessor / appraiser and to be buyer-verified. RSO registration, the recorded Ellis-Act notice and prior-owner litigation matter (preliminary report) to be reviewed by buyer’s counsel.</p>
+        </div>
+      </div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap · LAAA Team</div><div>Siskiyou Street Apartments · Offering Memorandum</div><div class="pg">07</div></div>
+  </div>
+</section>
+
+<!-- ============ 8 · RENT ROLL & UNIT MIX ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh">
+      <div><div class="eyebrow">05 · Income</div><div class="sect">Rent Roll &amp; Unit Mix</div></div>
+      <div class="tag">As of March 2026</div>
+    </div>
+    <div class="body" style="display:grid;grid-template-columns:1.55fr 1fr;gap:18px;">
+      <div>
+        <table class="mono-td">
+          <thead><tr><th>Unit</th><th>Type</th><th>SF</th><th>In-Place</th><th>$/SF</th><th>Market</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>3551</td><td>2BD / 1.5BA</td><td>800</td><td>$2,150</td><td>$2.69</td><td>$2,200</td><td><span class="tag-pill">Near Mkt</span></td></tr>
+            <tr class="hl"><td>3553</td><td>2BD / 1BA</td><td>750</td><td>$560</td><td>$0.75</td><td>$2,100</td><td><span class="tag-pill val">Upside</span></td></tr>
+            <tr><td>3553½</td><td>2BD / 1BA</td><td>750</td><td>$2,100</td><td>$2.80</td><td>$2,100</td><td><span class="tag-pill adu">New ADU ’23</span></td></tr>
+            <tr class="hl"><td>3555</td><td>2BD / 1BA</td><td>750</td><td>$560</td><td>$0.75</td><td>$2,100</td><td><span class="tag-pill val">Upside</span></td></tr>
+            <tr class="hl"><td>3557</td><td>2BD / 1BA</td><td>750</td><td>$641</td><td>$0.85</td><td>$2,100</td><td><span class="tag-pill val">Upside</span></td></tr>
+            <tr><td>3557½</td><td>2BD / 1BA</td><td>750</td><td>$2,100</td><td>$2.80</td><td>$2,100</td><td><span class="tag-pill adu">New ADU ’23</span></td></tr>
+            <tr><td>3559</td><td>2BD / 1BA</td><td>750</td><td>$2,595</td><td>$3.46</td><td>$2,100</td><td><span class="tag-pill">At Mkt</span></td></tr>
+            <tr class="sum"><td>Total / Avg</td><td>7 Units</td><td>5,302</td><td>$10,706</td><td>$2.02</td><td>$14,800</td><td>—</td></tr>
+          </tbody>
+        </table>
+        <div class="t-note">In-place “scheduled” rent totals $10,706/mo ($128,471/yr). Stabilized market totals $14,800/mo ($177,600/yr). Market rent shown at a conservative $2,100 (2BD/1BA) and $2,200 (2BD/1.5BA); unit 3559 already exceeds the stabilized target.</div>
+      </div>
+      <div>
+        <table>
+          <thead><tr><th>Unit Type</th><th>Qty</th><th>SF</th><th>In-Place</th><th>Market</th></tr></thead>
+          <tbody>
+            <tr><td>2BD / 1BA</td><td>6</td><td>750</td><td>$1,426</td><td>$2,100</td></tr>
+            <tr><td>2BD / 1.5BA</td><td>1</td><td>800</td><td>$2,150</td><td>$2,200</td></tr>
+            <tr class="sum"><td>Weighted Avg</td><td>7</td><td>757</td><td>$1,529</td><td>$2,114</td></tr>
+          </tbody>
+        </table>
+        <div class="tiles" style="grid-template-columns:1fr 1fr;margin-top:14px;">
+          <div class="tile"><div class="l">Loss to Lease</div><div class="v" style="font-size:20px;">$49,129</div><div class="sub">27.7% of GPR</div></div>
+          <div class="tile"><div class="l">Avg In-Place</div><div class="v" style="font-size:20px;">$1,529</div><div class="sub">per unit / mo</div></div>
+          <div class="tile"><div class="l">Avg Market</div><div class="v" style="font-size:20px;">$2,114</div><div class="sub">per unit / mo</div></div>
+          <div class="tile"><div class="l">NOI Growth</div><div class="v" style="font-size:20px;">+66%</div><div class="sub">$68K → $113K</div></div>
+        </div>
+        <div class="callout" style="margin-top:12px;">
+          <div class="l">The Mechanic</div>
+          <p>All upside is rent-roll mark-to-market on natural turnover — no entitlement, construction, or unit-count change required.</p>
+        </div>
+      </div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap · LAAA Team</div><div>Siskiyou Street Apartments · Offering Memorandum</div><div class="pg">08</div></div>
+  </div>
+</section>
+
+<!-- ============ 9 · INCOME & EXPENSE ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh">
+      <div><div class="eyebrow">06 · Financials</div><div class="sect">Income &amp; Expense Analysis</div></div>
+      <div class="tag">Current vs. Pro Forma</div>
+    </div>
+    <div class="body" style="display:grid;grid-template-columns:1.5fr 1fr;gap:18px;">
+      <div>
+        <table class="mono-td">
+          <thead><tr><th>Income</th><th>Current</th><th>Pro Forma</th><th>Per Unit</th></tr></thead>
+          <tbody>
+            <tr><td>Gross Potential Rent</td><td>$177,600</td><td>$177,600</td><td>$25,371</td></tr>
+            <tr><td>Loss / Gain to Lease</td><td>($49,129)</td><td>$0</td><td>—</td></tr>
+            <tr><td>Gross Scheduled Rent</td><td>$128,471</td><td>$177,600</td><td>$25,371</td></tr>
+            <tr><td>Vacancy &amp; Collection (3%)</td><td>($3,854)</td><td>($5,328)</td><td>($761)</td></tr>
+            <tr class="sum"><td>Effective Gross Income</td><td>$124,617</td><td>$172,272</td><td>$24,610</td></tr>
+          </tbody>
+        </table>
+        <table class="mono-td" style="margin-top:12px;">
+          <thead><tr><th>Expenses</th><th>Current</th><th>Pro Forma</th><th>Per Unit</th></tr></thead>
+          <tbody>
+            <tr><td>Real Estate Taxes</td><td>$13,200</td><td>$13,200</td><td>$1,886</td></tr>
+            <tr><td>Insurance</td><td>$6,628</td><td>$6,628</td><td>$947</td></tr>
+            <tr><td>Utilities</td><td>$12,600</td><td>$12,600</td><td>$1,800</td></tr>
+            <tr><td>Trash Removal</td><td>$3,360</td><td>$3,360</td><td>$480</td></tr>
+            <tr><td>Repairs &amp; Maintenance</td><td>$9,000</td><td>$9,000</td><td>$1,286</td></tr>
+            <tr><td>Service Contracts</td><td>$3,000</td><td>$3,000</td><td>$429</td></tr>
+            <tr><td>General &amp; Administrative</td><td>$1,050</td><td>$1,050</td><td>$150</td></tr>
+            <tr><td>Operating Reserves</td><td>$1,400</td><td>$1,400</td><td>$200</td></tr>
+            <tr><td>Management (5%)</td><td>$6,231</td><td>$8,614</td><td>$1,231</td></tr>
+            <tr class="sum"><td>Total Operating Expenses</td><td>$56,468</td><td>$58,851</td><td>$8,407</td></tr>
+            <tr class="sum hl" style=""><td>Net Operating Income</td><td>$68,149</td><td>$113,421</td><td>$16,203</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="tiles" style="grid-template-columns:1fr 1fr;">
+          <div class="tile"><div class="l">Current NOI</div><div class="v" style="font-size:20px;">$68,149</div><div class="sub">6.20% cap</div></div>
+          <div class="tile"><div class="l">Pro Forma NOI</div><div class="v" style="font-size:20px;">$113,421</div><div class="sub">10.31% cap</div></div>
+          <div class="tile"><div class="l">Exp Ratio (Cur)</div><div class="v" style="font-size:20px;">45.3%</div><div class="sub">of EGI</div></div>
+          <div class="tile"><div class="l">Exp Ratio (PF)</div><div class="v" style="font-size:20px;">34.2%</div><div class="sub">of EGI</div></div>
+        </div>
+        <div class="callout" style="margin-top:14px;">
+          <div class="l">Expense Discipline</div>
+          <p>The expense load is largely fixed — taxes, insurance, utilities and contracts hold flat into pro forma. Because the upside is revenue-driven, the operating ratio compresses from 45.3% to 34.2% as rents normalize, dropping nearly all incremental income to NOI.</p>
+        </div>
+        <div class="panel" style="margin-top:14px;">
+          <h3>Tax &amp; Underwriting Notes</h3>
+          <p style="font-size:9px;color:#414854;line-height:1.45;">Real estate taxes reflect the underwritten basis; property will be reassessed at sale per Prop 13. Management modeled at 5.0% of EGI. Vacancy held at 3.0% on current and pro forma. Figures from broker’s operating model; buyer to verify all income and expenses in due diligence.</p>
+        </div>
+      </div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap · LAAA Team</div><div>Siskiyou Street Apartments · Offering Memorandum</div><div class="pg">09</div></div>
+  </div>
+</section>
+
+<!-- ============ 10 · OPERATING DATA & RETURNS ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh">
+      <div><div class="eyebrow">07 · Returns</div><div class="sect">Operating Data &amp; Returns</div></div>
+      <div class="tag">At $1,100,000</div>
+    </div>
+    <div class="body" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+      <div class="panel">
+        <h3>Returns Summary</h3>
+        <table style="font-size:9.5px;">
+          <thead><tr><th>Metric</th><th>Current</th><th>Pro Forma</th></tr></thead>
+          <tbody>
+            <tr><td>Cap Rate</td><td>6.20%</td><td>10.31%</td></tr>
+            <tr><td>GRM</td><td>8.56</td><td>6.19</td></tr>
+            <tr><td>Cash-on-Cash</td><td>4.98%</td><td>15.27%</td></tr>
+            <tr><td>Debt Coverage</td><td>1.47</td><td>2.45</td></tr>
+            <tr><td>Total Return</td><td>6.91%</td><td>17.32%</td></tr>
+            <tr class="sum"><td>NOI</td><td>$68,149</td><td>$113,421</td></tr>
+          </tbody>
+        </table>
+        <h3 style="margin-top:12px;">Pricing</h3>
+        <div class="dl">
+          <dt>Offering Price</dt><dd>$1,100,000</dd>
+          <dt>Price / Unit</dt><dd>$157,143</dd>
+          <dt>Price / SF</dt><dd>$207.47</dd>
+          <dt>Number of Units</dt><dd>7</dd>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Proposed Financing</h3>
+        <div class="dl">
+          <dt>Loan Amount</dt><dd>$660,000</dd>
+          <dt>Loan-to-Value</dt><dd>60%</dd>
+          <dt>Down Payment</dt><dd>$440,000</dd>
+          <dt>Loan Type</dt><dd>New</dd>
+          <dt>Interest Rate</dt><dd>5.75%</dd>
+          <dt>Amortization</dt><dd>30 Years</dd>
+          <dt>Term</dt><dd>3 Years</dd>
+          <dt>Annual Debt Service</dt><dd>$46,219</dd>
+        </div>
+        <div class="callout" style="margin-top:12px;">
+          <div class="l">Cash Flow</div>
+          <p>Net cash flow after debt service grows from $21,930 (current) to $67,202 (stabilized) — a 4.98% → 15.27% cash-on-cash trajectory on $440,000 of equity.</p>
+        </div>
+        <p class="t-note">Financing illustrative and subject to change. Contact Marcus &amp; Millichap Capital Corporation.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="tile" style="border-top-color:var(--good);"><div class="l">Stabilized Cash-on-Cash</div><div class="v" style="color:var(--good);">15.27%</div><div class="sub">on $440K equity</div></div>
+        <div class="tile"><div class="l">Going-In Debt Yield</div><div class="v" style="font-size:22px;">10.3%</div><div class="sub">$68,149 NOI / $660K loan</div></div>
+        <div class="splitimg" style="flex:1;min-height:1.6in;"><img src="./assets/13.png" alt=""></div>
+      </div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap · LAAA Team</div><div>Siskiyou Street Apartments · Offering Memorandum</div><div class="pg">10</div></div>
+  </div>
+</section>
+
+<!-- ============ 11 · PRICING & POSITIONING ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh">
+      <div><div class="eyebrow">08 · Pricing</div><div class="sect">Pricing &amp; Positioning</div></div>
+      <div class="tag">Offered at $1,100,000</div>
+    </div>
+    <div class="body" style="display:grid;grid-template-columns:1.25fr 1fr;gap:22px;">
+      <div>
+        <div style="background:var(--navy);color:#fff;padding:20px 24px;border-left:5px solid var(--accent);">
+          <div style="font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);font-weight:700;">Offering Price</div>
+          <div class="serif" style="font-size:52px;font-weight:600;line-height:1;margin-top:6px;">$1,100,000</div>
+          <div style="font-size:10.5px;letter-spacing:.05em;color:rgba(255,255,255,.78);margin-top:10px;">$157,143 per unit · $207.47 per square foot · 7 units</div>
+        </div>
+        <div class="tiles" style="grid-template-columns:1fr 1fr;margin-top:14px;">
+          <div class="tile"><div class="l">Current Cap Rate</div><div class="v">6.20%</div><div class="sub">on in-place NOI</div></div>
+          <div class="tile" style="border-top-color:var(--good);"><div class="l">Pro Forma Cap Rate</div><div class="v" style="color:var(--good);">10.31%</div><div class="sub">stabilized NOI</div></div>
+          <div class="tile"><div class="l">Current GRM</div><div class="v">8.56</div><div class="sub">→ 6.19 pro forma</div></div>
+          <div class="tile"><div class="l">Cash-on-Cash</div><div class="v">4.98%</div><div class="sub">→ 15.27% stabilized</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="callout">
+          <div class="l">Positioning</div>
+          <p>At $1,100,000 the going-in 6.20% cap is squarely within the 5.8%–6.5% range at which value-add Boyle Heights product is trading, while the 10.31% stabilized yield rewards the buyer who executes the simple mark-to-market business plan. The $157K-per-unit basis sits below replacement cost and recent submarket trades.</p>
+        </div>
+        <div class="tiles" style="grid-template-columns:1fr 1fr;margin-top:14px;">
+          <div class="tile"><div class="l">Submarket Cap Range</div><div class="v" style="font-size:19px;">5.8–6.5%</div><div class="sub">value-add product</div></div>
+          <div class="tile"><div class="l">Going-In Here</div><div class="v" style="font-size:19px;">6.20%</div><div class="sub">in market</div></div>
+          <div class="tile"><div class="l">Stabilized Yield</div><div class="v" style="font-size:19px;color:var(--good);">10.31%</div><div class="sub">on cost</div></div>
+          <div class="tile"><div class="l">Basis / Unit</div><div class="v" style="font-size:19px;">$157K</div><div class="sub">below replacement</div></div>
+        </div>
+        <p class="t-note">Market cap context from current Boyle Heights listings and 2025–26 LA multifamily survey data; for positioning reference only.</p>
+      </div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap · LAAA Team</div><div>Siskiyou Street Apartments · Offering Memorandum</div><div class="pg">11</div></div>
+  </div>
+</section>
+
+<!-- ============ 12 · SALES COMPARABLES ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh">
+      <div><div class="eyebrow">09 · Market Evidence</div><div class="sect">Sales Comparables</div></div>
+      <div class="tag">Boyle Heights / East LA</div>
+    </div>
+    <div class="body" style="display:grid;grid-template-columns:1.6fr 1fr;gap:18px;">
+      <div>
+        <table class="note-edit" style="font-size:9.5px;">
+          <thead><tr><th>Comparable</th><th>Units</th><th>Year</th><th>Sale Price</th><th>$/Unit</th><th>$/SF</th><th>Cap</th></tr></thead>
+          <tbody>
+            <tr><td>Comp 1 — <i>address</i></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>Comp 2 — <i>address</i></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>Comp 3 — <i>address</i></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr><td>Comp 4 — <i>address</i></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+            <tr class="sum hl"><td>Subject — 3551–3559 Siskiyou</td><td>7</td><td>1929</td><td>$1,100,000</td><td>$157,143</td><td>$207</td><td>6.20%</td></tr>
+          </tbody>
+        </table>
+        <div class="edit-flag" style="margin-top:8px;display:block;">↑ Drop 3–5 verified CoStar / MLS sale comps into these rows. Subject row is populated and ready.</div>
+      </div>
+      <div>
+        <div class="callout">
+          <div class="l">Market Backdrop</div>
+          <p>Per 2025–26 survey data, stabilized LA Class-B multifamily trades roughly 4.75%–5.50%, with value-add East LA / Boyle Heights product pricing wider — current submarket listings sit in the 5.8%–6.5% range. The subject’s 6.20% going-in cap and $157K/unit basis price it competitively for a value-add buyer.</p>
+        </div>
+        <div class="splitimg" style="margin-top:12px;height:2.4in;"><img src="./assets/14.png" alt=""></div>
+      </div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap · LAAA Team</div><div>Siskiyou Street Apartments · Offering Memorandum</div><div class="pg">12</div></div>
+  </div>
+</section>
+
+<!-- ============ 13 · RENT COMPARABLES ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh">
+      <div><div class="eyebrow">10 · Market Evidence</div><div class="sect">Rent Comparables</div></div>
+      <div class="tag">2BR · Boyle Heights</div>
+    </div>
+    <div class="body" style="display:grid;grid-template-columns:1.5fr 1fr;gap:18px;">
+      <div>
+        <table style="font-size:9.5px;">
+          <thead><tr><th>Comparable — 2BD</th><th>Submarket</th><th>Asking Rent</th><th>vs. Subject PF</th></tr></thead>
+          <tbody>
+            <tr><td>405 N Soto Street</td><td>Boyle Heights</td><td>$2,534</td><td>+$434</td></tr>
+            <tr><td>3030 Whittier Boulevard</td><td>Boyle Heights</td><td>$2,395</td><td>+$295</td></tr>
+            <tr><td>1023 Tremont Street</td><td>Boyle Heights</td><td>$2,008</td><td>−$92</td></tr>
+            <tr><td>1102 Stone Street</td><td>Boyle Heights</td><td>$1,948</td><td>−$152</td></tr>
+            <tr><td>Boyle Heights 2BR — Market Avg</td><td>90023 / Area</td><td>$2,337</td><td>+$237</td></tr>
+            <tr class="sum hl"><td>Subject — Pro Forma Target</td><td>3551–3559 Siskiyou</td><td>$2,100</td><td>—</td></tr>
+          </tbody>
+        </table>
+        <div class="t-note">Comparables compiled from public rental listings and market survey data (Feb 2026); subject pro forma at the underwritten $2,100. Rents to be buyer-verified.</div>
+        <div class="callout" style="margin-top:14px;">
+          <div class="l">Conservative By Design</div>
+          <p>The subject’s $2,100 pro forma 2BR rent sits <b>below</b> the $2,337 Boyle Heights 2-bedroom market average — and below several active comps near $2,400–$2,500 — leaving additional embedded upside beyond the underwritten stabilized figure.</p>
+        </div>
+      </div>
+      <div>
+        <div class="tiles" style="grid-template-columns:1fr;">
+          <div class="tile"><div class="l">Boyle Heights Avg 2BR</div><div class="v">$2,337</div><div class="sub">Feb 2026 · market survey</div></div>
+          <div class="tile" style="border-top-color:var(--good);"><div class="l">Subject Pro Forma 2BR</div><div class="v" style="color:var(--good);">$2,100</div><div class="sub">conservative underwriting</div></div>
+          <div class="tile"><div class="l">Observed 2BR Range</div><div class="v" style="font-size:21px;">$1,625–$3,298</div><div class="sub">submarket spread</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap · LAAA Team</div><div>Siskiyou Street Apartments · Offering Memorandum</div><div class="pg">13</div></div>
+  </div>
+</section>
+
+<!-- ============ 14 · MARKET OVERVIEW ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh">
+      <div><div class="eyebrow">11 · Location</div><div class="sect">Boyle Heights Market Overview</div></div>
+      <div class="tag">East Los Angeles</div>
+    </div>
+    <div class="body" style="display:grid;grid-template-columns:1.1fr 1fr;gap:20px;">
+      <div>
+        <p class="lead">One of Los Angeles’ most centrally located and supply-constrained rental submarkets — minutes from Downtown, ringed by freeways, and anchored by a deep, durable renter base.</p>
+        <p style="font-size:10px;color:#414854;margin-top:11px;">Boyle Heights sits immediately east of the Los Angeles River and Downtown LA, with direct access to the 5, 10, 60 and 101 freeways and Metro E (Gold) Line service at Indiana and Soto stations. The neighborhood’s historic, low-rise housing stock and minimal new supply support consistent occupancy and steady rent growth.</p>
+        <p style="font-size:10px;color:#414854;margin-top:9px;">3551–3559 Siskiyou is positioned near Lorena Street and Whittier Boulevard — a primary East LA retail and transit corridor — placing tenants within easy reach of employment, services and the broader Downtown job core roughly three miles to the west.</p>
+        <div class="grid3" style="margin-top:14px;">
+          <div class="tile"><div class="l">To Downtown LA</div><div class="v" style="font-size:20px;">±3 mi</div></div>
+          <div class="tile"><div class="l">Freeway Access</div><div class="v" style="font-size:20px;">5 · 10 · 60</div></div>
+          <div class="tile"><div class="l">Transit</div><div class="v" style="font-size:16px;">Metro E Line</div></div>
+        </div>
+      </div>
+      <div class="splitimg"><img src="./assets/3.png" alt="Boyle Heights"></div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap · LAAA Team</div><div>Siskiyou Street Apartments · Offering Memorandum</div><div class="pg">14</div></div>
+  </div>
+</section>
+
+<!-- ============ 15 · DEMOGRAPHICS ============ -->
+<section class="page">
+  <div class="page-pad">
+    <div class="rh">
+      <div><div class="eyebrow">12 · Demographics</div><div class="sect">Area Demographics</div></div>
+      <div class="tag">90023 · Boyle Heights</div>
+    </div>
+    <div class="body" style="display:grid;grid-template-columns:1.4fr 1fr;gap:18px;">
+      <div>
+        <table>
+          <thead><tr><th>Metric</th><th>ZIP 90023</th><th>City of L.A.</th><th>L.A. County</th></tr></thead>
+          <tbody>
+            <tr><td>Population</td><td>44,017</td><td>3.82M</td><td>9.66M</td></tr>
+            <tr><td>Households</td><td>±12,500</td><td>±1.40M</td><td>±3.42M</td></tr>
+            <tr><td>Median HH Income</td><td>$59,669</td><td>$76,135</td><td>$83,411</td></tr>
+            <tr><td>Median Age</td><td>33.1</td><td>35.9</td><td>38.0</td></tr>
+            <tr class="hl"><td>Renter-Occupied</td><td>75%</td><td>63%</td><td>54%</td></tr>
+            <tr><td>Median Gross Rent</td><td>$1,538</td><td>$1,747</td><td>$1,786</td></tr>
+            <tr><td>Pop. Density / mi²</td><td>10,420</td><td>8,304</td><td>2,100</td></tr>
+          </tbody>
+        </table>
+        <div class="t-note">Source: U.S. Census Bureau / ACS estimates. Figures approximate and rounded; to be buyer-verified.</div>
+      </div>
+      <div>
+        <div class="callout">
+          <div class="l">Renter-Driven Submarket</div>
+          <p>Boyle Heights is a dense, predominantly renter-occupied neighborhood with limited new multifamily supply — a structural backdrop that supports stable occupancy and long-run rent growth for well-located vintage assets like Siskiyou Street.</p>
+        </div>
+        <div class="splitimg" style="margin-top:12px;height:2.5in;"><img src="./assets/4.png" alt=""></div>
+      </div>
+    </div>
+    <div class="rf"><div class="logo"><span class="dia"></span>Marcus &amp; Millichap · LAAA Team</div><div>Siskiyou Street Apartments · Offering Memorandum</div><div class="pg">15</div></div>
+  </div>
+</section>
+
+<!-- ============ 16 · BACK / CONTACT ============ -->
+<section class="page cover">
+  <div class="hero"><img src="./assets/5.png" alt="" /></div>
+  <div class="grad"></div>
+  <div class="frame"></div>
+  <div class="cover-top">
+    <img class="team-logo" src="./assets/laaa-team-white.png" alt="Marcus & Millichap — LAAA Team" />
+    <div class="eyebrow">Multifamily Investment Advisors</div>
+  </div>
+  <div class="cover-band">
+    <div class="kicker">Exclusively Listed By</div>
+    <div class="cover-divider"></div>
+    <h1 style="font-size:38px;">Let’s discuss<br/>Siskiyou Street.</h1>
+    <div class="cover-stats" style="margin-top:26px;gap:46px;">
+      <div class="s">
+        <div class="v" style="font-size:21px;">Filip Niculete</div>
+        <div class="l" style="text-transform:none;letter-spacing:.04em;font-size:10px;color:rgba(255,255,255,.85);margin-top:6px;line-height:1.6;">
+          Senior Managing Director, Investments<br/>(818) 212-2748 · filip.niculete@marcusmillichap.com<br/>CA DRE #01905352</div>
+      </div>
+      <div class="s">
+        <div class="v" style="font-size:21px;">Glen Scher</div>
+        <div class="l" style="text-transform:none;letter-spacing:.04em;font-size:10px;color:rgba(255,255,255,.85);margin-top:6px;line-height:1.6;">
+          Senior Managing Director, Investments<br/>(818) 212-2808 · glen.scher@marcusmillichap.com<br/>CA DRE #01962976</div>
+      </div>
+    </div>
+  </div>
+  <div class="cover-foot">
+    <span>Marcus &amp; Millichap · 16830 Ventura Blvd, Suite 100, Encino, CA 91436</span>
+    <span>www.laaa.com</span>
+  </div>
+</section>
+
+</div>
+<script>
+  // Smooth-ish keyboard paging for on-screen review
+  document.addEventListener('keydown',function(e){
+    var pages=[].slice.call(document.querySelectorAll('.page'));
+    var i=pages.findIndex(p=>p.getBoundingClientRect().top> -50);
+    if(e.key==='ArrowDown'||e.key==='PageDown'){if(pages[i+0])pages[Math.min(i+1,pages.length-1)].scrollIntoView({behavior:'smooth'});}
+    if(e.key==='ArrowUp'||e.key==='PageUp'){if(pages[i-1])pages[Math.max(i-1,0)].scrollIntoView({behavior:'smooth'});}
+  });
+</script>
+<style>
+  @media print{
+    @page{size:11in 8.5in;margin:0;}
+    html,body{background:#fff;}
+    .deck{gap:0;padding:0;}
+    .page{box-shadow:none;page-break-after:always;break-after:page;margin:0;}
+    .page:last-child{page-break-after:auto;}
+  }
+</style>
+</body>
+</html>
